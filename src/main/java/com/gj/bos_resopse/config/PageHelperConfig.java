@@ -19,7 +19,6 @@ public class PageHelperConfig {
         Properties properties = new Properties();
         properties.setProperty("helperDialect", helperDialect);
         pageInterceptor.setProperties(properties);
-
         return pageInterceptor;
     }
 

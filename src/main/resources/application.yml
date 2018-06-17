@@ -1,9 +1,9 @@
 server:
-  port: 8080
+  port: 8081
 #
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/bos_5_3?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    url: jdbc:mysql://localhost:3306/e3-shop?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
     password: guojian
@@ -22,20 +22,32 @@ spring:
     poolPreparedStatements: true
     maxPoolPreparedStatementPerConnectionSize: 20
     maxOpenPreparedStatements: 20
+  application:
+    name: bosresopse
     # mybatis
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.gj.bos_resopse.entity
+  type-aliases-package: com.gj.bos_resopse.pojo
 mapper:
   mappers: com.gj.bos_resopse.dao
   not-empty: false
   identity: MYSQL
-  #pagehelper
+  #分页
 pagehelper:
       helperDialect: mysql
       reasonable: true
       supportMethodsArguments: true
       params: count=countSql
       eturnPageInfo: check
+      # eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
+
 
 
