@@ -5,7 +5,9 @@ import java.util.List;
 import com.gj.bos_resopse.pojo.TbContent;
 import com.gj.bos_resopse.pojo.TbContentExample;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface TbContentMapper {
     int countByExample(TbContentExample example);
 

@@ -1,6 +1,7 @@
 package com.gj.bos_resopse.pojo;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class TbItem {
     private Long id;
@@ -61,6 +62,9 @@ public class TbItem {
         return num;
     }
 
+    public TbItem() {
+    }
+
     public void setNum(Integer num) {
         this.num = num;
     }
@@ -111,5 +115,60 @@ public class TbItem {
 
     public void setUpdated(Date updated) {
         this.updated = updated;
+    }
+
+    @Override
+    public String toString() {
+        return "TbItem{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", sellPoint='" + sellPoint + '\'' +
+                ", price=" + price +
+                ", num=" + num +
+                ", barcode='" + barcode + '\'' +
+                ", image='" + image + '\'' +
+                ", cid=" + cid +
+                ", status=" + status +
+                ", created=" + created +
+                ", updated=" + updated +
+                '}';
+    }
+
+    public TbItem(Long id, String title, String sellPoint, Long price, Integer num, String barcode, String image, Long cid, Byte status, Date created, Date updated) {
+        this.id = id;
+        this.title = title;
+        this.sellPoint = sellPoint;
+        this.price = price;
+        this.num = num;
+        this.barcode = barcode;
+        this.image = image;
+        this.cid = cid;
+        this.status = status;
+        this.created = created;
+        this.updated = updated;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TbItem tbItem = (TbItem) o;
+        return Objects.equals(id, tbItem.id) &&
+                Objects.equals(title, tbItem.title) &&
+                Objects.equals(sellPoint, tbItem.sellPoint) &&
+                Objects.equals(price, tbItem.price) &&
+                Objects.equals(num, tbItem.num) &&
+                Objects.equals(barcode, tbItem.barcode) &&
+                Objects.equals(image, tbItem.image) &&
+                Objects.equals(cid, tbItem.cid) &&
+                Objects.equals(status, tbItem.status) &&
+                Objects.equals(created, tbItem.created) &&
+                Objects.equals(updated, tbItem.updated);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, title, sellPoint, price, num, barcode, image, cid, status, created, updated);
     }
 }

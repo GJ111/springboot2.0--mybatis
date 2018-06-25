@@ -5,7 +5,9 @@ import java.util.List;
 import com.gj.bos_resopse.pojo.TbContentCategory;
 import com.gj.bos_resopse.pojo.TbContentCategoryExample;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface TbContentCategoryMapper {
     int countByExample(TbContentCategoryExample example);
 

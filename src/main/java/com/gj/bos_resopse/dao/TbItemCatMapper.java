@@ -5,7 +5,9 @@ import java.util.List;
 import com.gj.bos_resopse.pojo.TbItemCat;
 import com.gj.bos_resopse.pojo.TbItemCatExample;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface TbItemCatMapper {
     int countByExample(TbItemCatExample example);
 

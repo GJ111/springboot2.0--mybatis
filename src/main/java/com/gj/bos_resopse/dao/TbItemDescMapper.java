@@ -5,7 +5,9 @@ import java.util.List;
 import com.gj.bos_resopse.pojo.TbItemDesc;
 import com.gj.bos_resopse.pojo.TbItemDescExample;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface TbItemDescMapper {
     int countByExample(TbItemDescExample example);
 
